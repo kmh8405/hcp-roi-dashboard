@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment-Rx ROI 대시보드</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">Rx</span>
+      <div>
+        <h1>Payment-Rx ROI 대시보드</h1>
+        <p class="subtitle">영업 관리자용 · Novartis CA 처방-지급 결합 분석</p>
+      </div>
+    </div>
+    <div class="filter-group">
+      <label for="productFilter">제품 필터</label>
+      <select id="productFilter">
+        <option value="ALL">전체</option>
+        <option value="ENTRESTO">Entresto</option>
+        <option value="COSENTYX">Cosentyx</option>
+        <option value="LUCENTIS">Lucentis</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="kpi-grid" id="kpiGrid"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>제품별 ROI (처방액 ÷ 지급액)</h2>
+      <p class="panel-desc">지급 활동 대비 처방 매출 배수. Lucentis는 매칭되는 지급 데이터가 없어 ROI를 계산할 수 없습니다.</p>
+    </div>
+    <div class="chart-wrap"><canvas id="roiChart"></canvas></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Paid vs Unpaid 처방 비교</h2>
+      <p class="panel-desc" id="paidUnpaidDesc">지급을 받은 의사군과 받지 않은 의사군의 평균 처방 지표 비교입니다. 상관관계이며 인과관계를 의미하지 않습니다.</p>
+    </div>
+    <div class="split">
+      <div class="chart-wrap small"><canvas id="paidUnpaidChart"></canvas></div>
+      <div class="pu-cards" id="puCards"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Top HCP 리스트</h2>
+      <p class="panel-desc">처방액 기준 상위 25명. 이름/도시로 검색할 수 있습니다.</p>
+    </div>
+    <input type="text" id="hcpSearch" placeholder="의사명 또는 도시 검색...">
+    <div class="table-wrap">
+      <table id="hcpTable">
+        <thead>
+          <tr>
+            <th>순위</th><th>의사명</th><th>도시</th><th>전문과목</th>
+            <th class="num">처방액</th><th class="num">처방건수</th>
+            <th class="num">지급액</th><th>지급 매칭</th>
+          </tr>
+        </thead>
+        <tbody id="hcpTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel notes">
+    <h2>데이터 및 방법론 안내</h2>
+    <ul>
+      <li>데이터 범위: Part D 처방 데이터(CA, Entresto/Cosentyx 계열/Lucentis 5개 SKU)와 2022년 Open Payments 지급 데이터(CA 중심, Novartis 24개 제품)를 NPI 기준으로 결합했습니다.</li>
+      <li>ROI 정의: 제품별 <b>Tot_Drug_Cst(총 약제비) ÷ 지급총액</b>이며, 순수 매출·이익 지표가 아닙니다.</li>
+      <li>지급 중복 집계: 하나의 지급 레코드가 여러 제품에 매핑된 경우, 해당 지급액은 각 제품에 전액 중복 반영됩니다.</li>
+      <li>Paid/Unpaid 기준: 제품별 필터 시 해당 제품에 대한 지급 여부, 전체 보기 시 Novartis 제품 전반에 대한 지급 여부를 기준으로 구분합니다.</li>
+      <li>전체 처방의(NPI) 4,036명 중 Open Payments와 매칭되는 의사는 1,677명(약 41.6%)입니다.</li>
+      <li>데이터 갱신 주기: 월별 (Open Payments 공식 데이터는 연 1회 공개되므로 실제 반영 주기는 달라질 수 있습니다).</li>
+    </ul>
+    <p class="last-updated" id="lastUpdated"></p>
+  </section>
+
+</main>
+
+<footer class="footer">Internal use only · 영업팀 전용 · PRD: Payment-Rx ROI 대시보드 v1.0</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

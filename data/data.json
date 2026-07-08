@@ -1,0 +1,896 @@
+{
+  "meta": {
+    "generatedNote": "Part D (CA, 5 brands) x Open Payments (CA-centric, 2022, Novartis) 결합 분석",
+    "partDPrescriberCount": 4036,
+    "openPaymentsRecipientCount": 7293,
+    "matchedNpiCount": 1677,
+    "overallTotalRxCost": 266827958.99,
+    "overallTotalPaymentAllProducts": 1384132.4
+  },
+  "products": [
+    {
+      "product": "ENTRESTO",
+      "display": "Entresto",
+      "rxCost": 178617034.61,
+      "rxClaims": 177461.0,
+      "rxPrescribers": 3441,
+      "paymentAmount": 242778.32,
+      "paymentRecords": 12076,
+      "paymentRecipients": 3252,
+      "roi": 735.72,
+      "hasPaymentData": true
+    },
+    {
+      "product": "COSENTYX",
+      "display": "Cosentyx",
+      "rxCost": 88089869.39,
+      "rxClaims": 14632.0,
+      "rxPrescribers": 594,
+      "paymentAmount": 267748.18,
+      "paymentRecords": 6696,
+      "paymentRecipients": 1219,
+      "roi": 329.0,
+      "hasPaymentData": true
+    },
+    {
+      "product": "LUCENTIS",
+      "display": "Lucentis",
+      "rxCost": 121054.99,
+      "rxClaims": 40.0,
+      "rxPrescribers": 3,
+      "paymentAmount": 0,
+      "paymentRecords": 0,
+      "paymentRecipients": 0,
+      "roi": null,
+      "hasPaymentData": false
+    }
+  ],
+  "paidVsUnpaid": {
+    "ALL": {
+      "paid": {
+        "n": 1677,
+        "avgCost": 87860.75,
+        "avgClaims": 64.6,
+        "totalCost": 147342473.63
+      },
+      "unpaid": {
+        "n": 2359,
+        "avgCost": 50650.91,
+        "avgClaims": 35.5,
+        "totalCost": 119485485.36
+      }
+    },
+    "ENTRESTO": {
+      "paid": {
+        "n": 1289,
+        "avgCost": 74199.18,
+        "avgClaims": 73.0,
+        "totalCost": 95642741.59
+      },
+      "unpaid": {
+        "n": 2152,
+        "avgCost": 38556.83,
+        "avgClaims": 38.7,
+        "totalCost": 82974293.02
+      }
+    },
+    "COSENTYX": {
+      "paid": {
+        "n": 229,
+        "avgCost": 183047.39,
+        "avgClaims": 24.7,
+        "totalCost": 41917852.93
+      },
+      "unpaid": {
+        "n": 365,
+        "avgCost": 126498.68,
+        "avgClaims": 24.6,
+        "totalCost": 46172016.46
+      }
+    },
+    "LUCENTIS": {
+      "paid": {
+        "n": 0,
+        "avgCost": 0,
+        "avgClaims": 0,
+        "totalCost": 0.0
+      },
+      "unpaid": {
+        "n": 3,
+        "avgCost": 40351.66,
+        "avgClaims": 13.3,
+        "totalCost": 121054.99
+      }
+    }
+  },
+  "topHcp": {
+    "ALL": [
+      {
+        "npi": "1396741351",
+        "name": "Tien Nguyen",
+        "city": "Fountain Valley",
+        "specialty": "Dermatology",
+        "rxCost": 1591479.54,
+        "rxClaims": 224.0,
+        "paymentAmount": 346.07,
+        "matched": true
+      },
+      {
+        "npi": "1083892236",
+        "name": "Chris Towery",
+        "city": "Santa Clarita",
+        "specialty": "Physician Assistant",
+        "rxCost": 1006538.48,
+        "rxClaims": 142.0,
+        "paymentAmount": 159.87,
+        "matched": true
+      },
+      {
+        "npi": "1649230988",
+        "name": "Mohamed Khan",
+        "city": "Redding",
+        "specialty": "Interventional Cardiology",
+        "rxCost": 956329.46,
+        "rxClaims": 603.0,
+        "paymentAmount": 116.54,
+        "matched": true
+      },
+      {
+        "npi": "1093911356",
+        "name": "Brittany Goss",
+        "city": "Napa",
+        "specialty": "Rheumatology",
+        "rxCost": 941504.05,
+        "rxClaims": 126.0,
+        "paymentAmount": 177.5,
+        "matched": true
+      },
+      {
+        "npi": "1104876002",
+        "name": "Mayer Rashtian",
+        "city": "Pasadena",
+        "specialty": "Clinical Cardiac Electrophysiology",
+        "rxCost": 915169.4,
+        "rxClaims": 804.0,
+        "paymentAmount": 487.47,
+        "matched": true
+      },
+      {
+        "npi": "1023391166",
+        "name": "Sohaib Tariq",
+        "city": "El Centro",
+        "specialty": "Cardiology",
+        "rxCost": 823055.77,
+        "rxClaims": 1153.0,
+        "paymentAmount": 32.41,
+        "matched": true
+      },
+      {
+        "npi": "1396714937",
+        "name": "Michael Krueger",
+        "city": "Fresno",
+        "specialty": "Cardiology",
+        "rxCost": 790477.95,
+        "rxClaims": 557.0,
+        "paymentAmount": 232.67,
+        "matched": true
+      },
+      {
+        "npi": "1629246228",
+        "name": "Hajra Tily",
+        "city": "Modesto",
+        "specialty": "Rheumatology",
+        "rxCost": 772511.62,
+        "rxClaims": 84.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1164522165",
+        "name": "Roger Wang",
+        "city": "San Francisco",
+        "specialty": "Allergy/ Immunology",
+        "rxCost": 710244.89,
+        "rxClaims": 107.0,
+        "paymentAmount": 457.48,
+        "matched": true
+      },
+      {
+        "npi": "1780786657",
+        "name": "Steve Krikoriantz",
+        "city": "Oroville",
+        "specialty": "Physician Assistant",
+        "rxCost": 678617.57,
+        "rxClaims": 90.0,
+        "paymentAmount": 289.88,
+        "matched": true
+      },
+      {
+        "npi": "1831614353",
+        "name": "Khanh Ngoc Ton Nu",
+        "city": "Westminster",
+        "specialty": "Physician Assistant",
+        "rxCost": 672495.15,
+        "rxClaims": 94.0,
+        "paymentAmount": 109.72,
+        "matched": true
+      },
+      {
+        "npi": "1104806421",
+        "name": "Don Lee",
+        "city": "Glendale",
+        "specialty": "Cardiology",
+        "rxCost": 663120.41,
+        "rxClaims": 744.0,
+        "paymentAmount": 488.09,
+        "matched": true
+      },
+      {
+        "npi": "1194840694",
+        "name": "Munir Janmohamed",
+        "city": "Sacramento",
+        "specialty": "Advanced Heart Failure and Transplant Cardiology",
+        "rxCost": 654508.96,
+        "rxClaims": 650.0,
+        "paymentAmount": 165.27,
+        "matched": true
+      },
+      {
+        "npi": "1477536738",
+        "name": "Haroutioun Mesrobian",
+        "city": "Glendale",
+        "specialty": "Cardiology",
+        "rxCost": 650898.78,
+        "rxClaims": 894.0,
+        "paymentAmount": 140.54,
+        "matched": true
+      },
+      {
+        "npi": "1902867294",
+        "name": "Pierre Labrecque",
+        "city": "Santa Maria",
+        "specialty": "Dermatology",
+        "rxCost": 623446.31,
+        "rxClaims": 92.0,
+        "paymentAmount": 49.48,
+        "matched": true
+      },
+      {
+        "npi": "1366554933",
+        "name": "Dennis Liu",
+        "city": "Folsom",
+        "specialty": "Rheumatology",
+        "rxCost": 591382.81,
+        "rxClaims": 76.0,
+        "paymentAmount": 60.24,
+        "matched": true
+      },
+      {
+        "npi": "1811183585",
+        "name": "Jeremy Anuntiyo",
+        "city": "San Pedro",
+        "specialty": "Internal Medicine",
+        "rxCost": 585288.5,
+        "rxClaims": 74.0,
+        "paymentAmount": 279.42,
+        "matched": true
+      },
+      {
+        "npi": "1366438764",
+        "name": "Nassir Azimi",
+        "city": "La Mesa",
+        "specialty": "Cardiology",
+        "rxCost": 584026.88,
+        "rxClaims": 468.0,
+        "paymentAmount": 227.96,
+        "matched": true
+      },
+      {
+        "npi": "1932106002",
+        "name": "Thomas Dunlap",
+        "city": "Santa Rosa",
+        "specialty": "Cardiology",
+        "rxCost": 579016.83,
+        "rxClaims": 387.0,
+        "paymentAmount": 106.9,
+        "matched": true
+      },
+      {
+        "npi": "1649224387",
+        "name": "Vachaspathi Palakodeti",
+        "city": "Imperial",
+        "specialty": "Cardiology",
+        "rxCost": 572755.74,
+        "rxClaims": 550.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1174664783",
+        "name": "Leo Polosajian",
+        "city": "Reseda",
+        "specialty": "Cardiology",
+        "rxCost": 562128.9,
+        "rxClaims": 660.0,
+        "paymentAmount": 342.25,
+        "matched": true
+      },
+      {
+        "npi": "1003914227",
+        "name": "Anna Milstein",
+        "city": "Los Angeles",
+        "specialty": "Cardiology",
+        "rxCost": 558465.42,
+        "rxClaims": 795.0,
+        "paymentAmount": 330.62,
+        "matched": true
+      },
+      {
+        "npi": "1609058106",
+        "name": "Antoine Sakr",
+        "city": "Loma Linda",
+        "specialty": "Advanced Heart Failure and Transplant Cardiology",
+        "rxCost": 545171.98,
+        "rxClaims": 452.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1508031949",
+        "name": "Amir Sadrzadeh Rafie",
+        "city": "Glendale",
+        "specialty": "Interventional Cardiology",
+        "rxCost": 545092.83,
+        "rxClaims": 598.0,
+        "paymentAmount": 434.46,
+        "matched": true
+      },
+      {
+        "npi": "1356487656",
+        "name": "Shashi Sharma",
+        "city": "Visalia",
+        "specialty": "Cardiology",
+        "rxCost": 535529.63,
+        "rxClaims": 451.0,
+        "paymentAmount": 61.28,
+        "matched": true
+      }
+    ],
+    "ENTRESTO": [
+      {
+        "npi": "1649230988",
+        "name": "Mohamed Khan",
+        "city": "Redding",
+        "specialty": "Interventional Cardiology",
+        "rxCost": 956329.46,
+        "rxClaims": 603.0,
+        "paymentAmount": 75.04,
+        "matched": true
+      },
+      {
+        "npi": "1104876002",
+        "name": "Mayer Rashtian",
+        "city": "Pasadena",
+        "specialty": "Clinical Cardiac Electrophysiology",
+        "rxCost": 915169.4,
+        "rxClaims": 804.0,
+        "paymentAmount": 260.71,
+        "matched": true
+      },
+      {
+        "npi": "1023391166",
+        "name": "Sohaib Tariq",
+        "city": "El Centro",
+        "specialty": "Cardiology",
+        "rxCost": 823055.77,
+        "rxClaims": 1153.0,
+        "paymentAmount": 13.57,
+        "matched": true
+      },
+      {
+        "npi": "1396714937",
+        "name": "Michael Krueger",
+        "city": "Fresno",
+        "specialty": "Cardiology",
+        "rxCost": 790477.95,
+        "rxClaims": 557.0,
+        "paymentAmount": 86.01,
+        "matched": true
+      },
+      {
+        "npi": "1104806421",
+        "name": "Don Lee",
+        "city": "Glendale",
+        "specialty": "Cardiology",
+        "rxCost": 663120.41,
+        "rxClaims": 744.0,
+        "paymentAmount": 202.31,
+        "matched": true
+      },
+      {
+        "npi": "1194840694",
+        "name": "Munir Janmohamed",
+        "city": "Sacramento",
+        "specialty": "Advanced Heart Failure and Transplant Cardiology",
+        "rxCost": 654508.96,
+        "rxClaims": 650.0,
+        "paymentAmount": 165.27,
+        "matched": true
+      },
+      {
+        "npi": "1477536738",
+        "name": "Haroutioun Mesrobian",
+        "city": "Glendale",
+        "specialty": "Cardiology",
+        "rxCost": 650898.78,
+        "rxClaims": 894.0,
+        "paymentAmount": 93.73,
+        "matched": true
+      },
+      {
+        "npi": "1366438764",
+        "name": "Nassir Azimi",
+        "city": "La Mesa",
+        "specialty": "Cardiology",
+        "rxCost": 584026.88,
+        "rxClaims": 468.0,
+        "paymentAmount": 106.69,
+        "matched": true
+      },
+      {
+        "npi": "1932106002",
+        "name": "Thomas Dunlap",
+        "city": "Santa Rosa",
+        "specialty": "Cardiology",
+        "rxCost": 579016.83,
+        "rxClaims": 387.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1649224387",
+        "name": "Vachaspathi Palakodeti",
+        "city": "Imperial",
+        "specialty": "Cardiology",
+        "rxCost": 572755.74,
+        "rxClaims": 550.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1174664783",
+        "name": "Leo Polosajian",
+        "city": "Reseda",
+        "specialty": "Cardiology",
+        "rxCost": 562128.9,
+        "rxClaims": 660.0,
+        "paymentAmount": 116.02,
+        "matched": true
+      },
+      {
+        "npi": "1003914227",
+        "name": "Anna Milstein",
+        "city": "Los Angeles",
+        "specialty": "Cardiology",
+        "rxCost": 558465.42,
+        "rxClaims": 795.0,
+        "paymentAmount": 216.67,
+        "matched": true
+      },
+      {
+        "npi": "1609058106",
+        "name": "Antoine Sakr",
+        "city": "Loma Linda",
+        "specialty": "Advanced Heart Failure and Transplant Cardiology",
+        "rxCost": 545171.98,
+        "rxClaims": 452.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1508031949",
+        "name": "Amir Sadrzadeh Rafie",
+        "city": "Glendale",
+        "specialty": "Interventional Cardiology",
+        "rxCost": 545092.83,
+        "rxClaims": 598.0,
+        "paymentAmount": 271.74,
+        "matched": true
+      },
+      {
+        "npi": "1356487656",
+        "name": "Shashi Sharma",
+        "city": "Visalia",
+        "specialty": "Cardiology",
+        "rxCost": 535529.63,
+        "rxClaims": 451.0,
+        "paymentAmount": 17.32,
+        "matched": true
+      },
+      {
+        "npi": "1770592578",
+        "name": "Usman Javed",
+        "city": "Fresno",
+        "specialty": "Cardiology",
+        "rxCost": 505998.91,
+        "rxClaims": 395.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1265458954",
+        "name": "Michael Yeh",
+        "city": "Alhambra",
+        "specialty": "Cardiology",
+        "rxCost": 493710.88,
+        "rxClaims": 576.0,
+        "paymentAmount": 100.58,
+        "matched": true
+      },
+      {
+        "npi": "1881920882",
+        "name": "Michael Gibson",
+        "city": "Orange",
+        "specialty": "Advanced Heart Failure and Transplant Cardiology",
+        "rxCost": 457129.33,
+        "rxClaims": 337.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1285671222",
+        "name": "Daniel Vanhamersveld",
+        "city": "Sacramento",
+        "specialty": "Cardiology",
+        "rxCost": 445184.27,
+        "rxClaims": 297.0,
+        "paymentAmount": 17.28,
+        "matched": true
+      },
+      {
+        "npi": "1699759936",
+        "name": "Benjamin Camacho",
+        "city": "National City",
+        "specialty": "Internal Medicine",
+        "rxCost": 437033.1,
+        "rxClaims": 339.0,
+        "paymentAmount": 156.79,
+        "matched": true
+      },
+      {
+        "npi": "1710074026",
+        "name": "Hew Quon",
+        "city": "Los Angeles",
+        "specialty": "Internal Medicine",
+        "rxCost": 406927.42,
+        "rxClaims": 409.0,
+        "paymentAmount": 58.68,
+        "matched": true
+      },
+      {
+        "npi": "1285722686",
+        "name": "Anita Szady",
+        "city": "Larkspur",
+        "specialty": "Advanced Heart Failure and Transplant Cardiology",
+        "rxCost": 406437.79,
+        "rxClaims": 440.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1275519175",
+        "name": "Hanh Bui",
+        "city": "Vista",
+        "specialty": "Internal Medicine",
+        "rxCost": 383915.82,
+        "rxClaims": 374.0,
+        "paymentAmount": 204.14,
+        "matched": true
+      },
+      {
+        "npi": "1265638811",
+        "name": "Rayan Hourani",
+        "city": "El Cajon",
+        "specialty": "Interventional Cardiology",
+        "rxCost": 366312.47,
+        "rxClaims": 349.0,
+        "paymentAmount": 118.37,
+        "matched": true
+      },
+      {
+        "npi": "1609806041",
+        "name": "Siva Arunasalam",
+        "city": "Victorville",
+        "specialty": "Cardiology",
+        "rxCost": 362236.3,
+        "rxClaims": 421.0,
+        "paymentAmount": 196.87,
+        "matched": true
+      }
+    ],
+    "COSENTYX": [
+      {
+        "npi": "1396741351",
+        "name": "Tien Nguyen",
+        "city": "Fountain Valley",
+        "specialty": "Dermatology",
+        "rxCost": 1591479.54,
+        "rxClaims": 224.0,
+        "paymentAmount": 346.07,
+        "matched": true
+      },
+      {
+        "npi": "1083892236",
+        "name": "Chris Towery",
+        "city": "Santa Clarita",
+        "specialty": "Physician Assistant",
+        "rxCost": 1006538.48,
+        "rxClaims": 142.0,
+        "paymentAmount": 159.87,
+        "matched": true
+      },
+      {
+        "npi": "1093911356",
+        "name": "Brittany Goss",
+        "city": "Napa",
+        "specialty": "Rheumatology",
+        "rxCost": 941504.05,
+        "rxClaims": 126.0,
+        "paymentAmount": 177.5,
+        "matched": true
+      },
+      {
+        "npi": "1629246228",
+        "name": "Hajra Tily",
+        "city": "Modesto",
+        "specialty": "Rheumatology",
+        "rxCost": 772511.62,
+        "rxClaims": 84.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1164522165",
+        "name": "Roger Wang",
+        "city": "San Francisco",
+        "specialty": "Allergy/ Immunology",
+        "rxCost": 710244.89,
+        "rxClaims": 107.0,
+        "paymentAmount": 457.48,
+        "matched": true
+      },
+      {
+        "npi": "1780786657",
+        "name": "Steve Krikoriantz",
+        "city": "Oroville",
+        "specialty": "Physician Assistant",
+        "rxCost": 678617.57,
+        "rxClaims": 90.0,
+        "paymentAmount": 289.88,
+        "matched": true
+      },
+      {
+        "npi": "1831614353",
+        "name": "Khanh Ngoc Ton Nu",
+        "city": "Westminster",
+        "specialty": "Physician Assistant",
+        "rxCost": 672495.15,
+        "rxClaims": 94.0,
+        "paymentAmount": 109.72,
+        "matched": true
+      },
+      {
+        "npi": "1902867294",
+        "name": "Pierre Labrecque",
+        "city": "Santa Maria",
+        "specialty": "Dermatology",
+        "rxCost": 623446.31,
+        "rxClaims": 92.0,
+        "paymentAmount": 49.48,
+        "matched": true
+      },
+      {
+        "npi": "1366554933",
+        "name": "Dennis Liu",
+        "city": "Folsom",
+        "specialty": "Rheumatology",
+        "rxCost": 591382.81,
+        "rxClaims": 76.0,
+        "paymentAmount": 60.24,
+        "matched": true
+      },
+      {
+        "npi": "1811183585",
+        "name": "Jeremy Anuntiyo",
+        "city": "San Pedro",
+        "specialty": "Internal Medicine",
+        "rxCost": 585288.5,
+        "rxClaims": 74.0,
+        "paymentAmount": 279.42,
+        "matched": true
+      },
+      {
+        "npi": "1902080625",
+        "name": "Harbrinder Sandhu",
+        "city": "Davis",
+        "specialty": "Rheumatology",
+        "rxCost": 509474.23,
+        "rxClaims": 56.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1831300722",
+        "name": "Sheri Hsu",
+        "city": "La Quinta",
+        "specialty": "Rheumatology",
+        "rxCost": 496205.83,
+        "rxClaims": 67.0,
+        "paymentAmount": 154.88,
+        "matched": true
+      },
+      {
+        "npi": "1972732600",
+        "name": "Christine Elias",
+        "city": "Fremont",
+        "specialty": "Rheumatology",
+        "rxCost": 490646.6,
+        "rxClaims": 65.0,
+        "paymentAmount": 150.48,
+        "matched": true
+      },
+      {
+        "npi": "1144308628",
+        "name": "Anand Lal",
+        "city": "Sacramento",
+        "specialty": "Rheumatology",
+        "rxCost": 474239.21,
+        "rxClaims": 116.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1326340308",
+        "name": "Michael Elist",
+        "city": "Tarzana",
+        "specialty": "Rheumatology",
+        "rxCost": 467443.44,
+        "rxClaims": 62.0,
+        "paymentAmount": 267.99,
+        "matched": true
+      },
+      {
+        "npi": "1629412259",
+        "name": "Luis Dehesa",
+        "city": "Fresno",
+        "specialty": "Dermatology",
+        "rxCost": 448674.26,
+        "rxClaims": 67.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1093718546",
+        "name": "Mychael Luu",
+        "city": "San Jose",
+        "specialty": "Dermatology",
+        "rxCost": 448321.48,
+        "rxClaims": 57.0,
+        "paymentAmount": 268.64,
+        "matched": true
+      },
+      {
+        "npi": "1245753839",
+        "name": "Sheryl Miles",
+        "city": "Santa Maria",
+        "specialty": "Physician Assistant",
+        "rxCost": 446405.3,
+        "rxClaims": 63.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1679689061",
+        "name": "Brian Kaye",
+        "city": "Berkeley",
+        "specialty": "Rheumatology",
+        "rxCost": 430957.6,
+        "rxClaims": 48.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1720074537",
+        "name": "Paul Yamauchi",
+        "city": "Santa Monica",
+        "specialty": "Dermatology",
+        "rxCost": 422744.08,
+        "rxClaims": 61.0,
+        "paymentAmount": 2892.7,
+        "matched": true
+      },
+      {
+        "npi": "1811394976",
+        "name": "Tanner Cavanaugh",
+        "city": "Modesto",
+        "specialty": "Physician Assistant",
+        "rxCost": 418921.64,
+        "rxClaims": 47.0,
+        "paymentAmount": 207.93,
+        "matched": true
+      },
+      {
+        "npi": "1952460859",
+        "name": "Noune Pashinian",
+        "city": "Glendale",
+        "specialty": "Rheumatology",
+        "rxCost": 410266.19,
+        "rxClaims": 42.0,
+        "paymentAmount": 168.18,
+        "matched": true
+      },
+      {
+        "npi": "1629002191",
+        "name": "Christina Kim",
+        "city": "Los Angeles",
+        "specialty": "Dermatology",
+        "rxCost": 409986.7,
+        "rxClaims": 84.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1144455262",
+        "name": "Basma Al Nahlawi",
+        "city": "San Marcos",
+        "specialty": "Rheumatology",
+        "rxCost": 400585.48,
+        "rxClaims": 50.0,
+        "paymentAmount": 178.17,
+        "matched": true
+      },
+      {
+        "npi": "1104110071",
+        "name": "Navid Ezra",
+        "city": "Thousand Oaks",
+        "specialty": "Dermatology",
+        "rxCost": 400107.98,
+        "rxClaims": 53.0,
+        "paymentAmount": 1979.9,
+        "matched": true
+      }
+    ],
+    "LUCENTIS": [
+      {
+        "npi": "1316980014",
+        "name": "Stephen Couvillion",
+        "city": "Santa Barbara",
+        "specialty": "Ophthalmology",
+        "rxCost": 53831.7,
+        "rxClaims": 17.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1689773244",
+        "name": "Alessandro Castellarin",
+        "city": "Santa Barbara",
+        "specialty": "Ophthalmology",
+        "rxCost": 43816.5,
+        "rxClaims": 12.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      },
+      {
+        "npi": "1750382008",
+        "name": "Randall Nguyen",
+        "city": "Long Beach",
+        "specialty": "Ophthalmology",
+        "rxCost": 23406.79,
+        "rxClaims": 11.0,
+        "paymentAmount": 0.0,
+        "matched": false
+      }
+    ]
+  }
+}
