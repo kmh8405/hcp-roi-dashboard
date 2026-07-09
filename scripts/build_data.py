@@ -1,65 +1,81 @@
-import csv, json
+import os, json
 from collections import defaultdict
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
-UP = '/sessions/amazing-ecstatic-bell/mnt/uploads/'
+DATABASE_URL = os.environ['DATABASE_URL']
+OUT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'data.json')
 
 # ---- canonical product mapping ----
 def canon(brand):
-    b = brand.lower()
+    b = (brand or '').lower()
     if 'entresto' in b: return 'ENTRESTO'
     if 'cosentyx' in b: return 'COSENTYX'
     if 'lucentis' in b: return 'LUCENTIS'
-    return brand.upper()
+    return (brand or '').upper()
 
 CANON_DISPLAY = {'ENTRESTO':'Entresto', 'COSENTYX':'Cosentyx', 'LUCENTIS':'Lucentis'}
+
+conn = psycopg2.connect(DATABASE_URL)
+cur = conn.cursor(cursor_factory=RealDictCursor)
 
 # ---- load Part D ----
 # per NPI per canonical product: sum claims/cost ; also keep doc meta
 rx = defaultdict(lambda: defaultdict(lambda: {'clms':0.0,'cost':0.0,'day_supply':0.0}))
 doc_meta = {}
-with open(UP+'part_d_prescriber.csv') as f:
-    r = csv.DictReader(f)
-    for row in r:
-        npi = row['Prscrbr_NPI']
-        prod = canon(row['Brnd_Name'])
-        clms = float(row['Tot_Clms'] or 0)
-        cost = float(row['Tot_Drug_Cst'] or 0)
-        rx[npi][prod]['clms'] += clms
-        rx[npi][prod]['cost'] += cost
-        doc_meta[npi] = {
-            'name': f"{row['Prscrbr_First_Name']} {row['Prscrbr_Last_Org_Name']}",
-            'city': row['Prscrbr_City'],
-            'state': row['Prscrbr_State_Abrvtn'],
-            'specialty': row['Prscrbr_Type'],
-        }
+cur.execute("""
+    SELECT prscrbr_npi, prscrbr_last_org_name, prscrbr_first_name, prscrbr_city,
+           prscrbr_state_abrvtn, prscrbr_type, brnd_name, tot_clms, tot_drug_cst
+    FROM part_d_prescriber
+""")
+for row in cur:
+    npi = row['prscrbr_npi']
+    prod = canon(row['brnd_name'])
+    clms = float(row['tot_clms'] or 0)
+    cost = float(row['tot_drug_cst'] or 0)
+    rx[npi][prod]['clms'] += clms
+    rx[npi][prod]['cost'] += cost
+    doc_meta[npi] = {
+        'name': f"{row['prscrbr_first_name']} {row['prscrbr_last_org_name']}",
+        'city': row['prscrbr_city'],
+        'state': row['prscrbr_state_abrvtn'],
+        'specialty': row['prscrbr_type'],
+    }
 
 # ---- load Open Payments ----
 # per NPI per canonical product: sum payment amt/count ; also payment_nature breakdown (not used in P0 but computed)
 pay = defaultdict(lambda: defaultdict(lambda: {'amt':0.0,'cnt':0}))
 pay_any = defaultdict(lambda: {'amt':0.0,'cnt':0})
 op_meta = {}
-with open(UP+'open_payments.csv') as f:
-    r = csv.DictReader(f)
-    for row in r:
-        npi = row['covered_recipient_npi']
-        amt = float(row['payment_amount_usd'] or 0)
-        products_in_row = set()
-        for k in ['product_1','product_2','product_3','product_4','product_5']:
-            p = row[k]
-            if p:
-                products_in_row.add(canon(p))
-        pay_any[npi]['amt'] += amt
-        pay_any[npi]['cnt'] += 1
-        for p in products_in_row:
-            pay[npi][p]['amt'] += amt
-            pay[npi][p]['cnt'] += 1
-        if npi not in op_meta:
-            op_meta[npi] = {
-                'name': f"{row['recipient_first_name']} {row['recipient_last_name']}",
-                'city': row['recipient_city'],
-                'state': row['recipient_state'],
-                'specialty': (row['recipient_specialty'].split('|')[0] if row['recipient_specialty'] else ''),
-            }
+cur.execute("""
+    SELECT covered_recipient_npi, recipient_first_name, recipient_last_name,
+           recipient_city, recipient_state, recipient_specialty, payment_amount_usd,
+           product_1, product_2, product_3, product_4, product_5
+    FROM open_payments
+""")
+for row in cur:
+    npi = row['covered_recipient_npi']
+    amt = float(row['payment_amount_usd'] or 0)
+    products_in_row = set()
+    for k in ['product_1','product_2','product_3','product_4','product_5']:
+        p = row[k]
+        if p:
+            products_in_row.add(canon(p))
+    pay_any[npi]['amt'] += amt
+    pay_any[npi]['cnt'] += 1
+    for p in products_in_row:
+        pay[npi][p]['amt'] += amt
+        pay[npi][p]['cnt'] += 1
+    if npi not in op_meta:
+        op_meta[npi] = {
+            'name': f"{row['recipient_first_name']} {row['recipient_last_name']}",
+            'city': row['recipient_city'],
+            'state': row['recipient_state'],
+            'specialty': (row['recipient_specialty'].split('|')[0] if row['recipient_specialty'] else ''),
+        }
+
+cur.close()
+conn.close()
 
 PRODUCTS = ['ENTRESTO','COSENTYX','LUCENTIS']
 
@@ -177,11 +193,7 @@ data = {
     'topHcp': top_hcp_lists,
 }
 
-with open('/sessions/amazing-ecstatic-bell/mnt/outputs/dashboard/data.json','w') as f:
+with open(OUT_PATH, 'w') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
 print(json.dumps(data['meta'], indent=2, ensure_ascii=False))
-print()
-print(json.dumps(data['products'], indent=2, ensure_ascii=False))
-print()
-print(json.dumps(data['paidVsUnpaid'], indent=2, ensure_ascii=False))
