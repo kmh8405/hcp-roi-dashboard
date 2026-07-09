@@ -4,20 +4,20 @@
     "partDPrescriberCount": 4036,
     "openPaymentsRecipientCount": 7293,
     "matchedNpiCount": 1677,
-    "overallTotalRxCost": 276811443.57,
+    "overallTotalRxCost": 266827958.99,
     "overallTotalPaymentAllProducts": 1384132.4
   },
   "products": [
     {
       "product": "ENTRESTO",
       "display": "Entresto",
-      "rxCost": 188600519.19,
+      "rxCost": 178617034.61,
       "rxClaims": 177461.0,
       "rxPrescribers": 3441,
       "paymentAmount": 242778.32,
       "paymentRecords": 12076,
       "paymentRecipients": 3252,
-      "roi": 776.84,
+      "roi": 735.72,
       "hasPaymentData": true
     },
     {
@@ -55,9 +55,9 @@
       },
       "unpaid": {
         "n": 2359,
-        "avgCost": 54882.99,
+        "avgCost": 50650.91,
         "avgClaims": 35.5,
-        "totalCost": 129468969.94
+        "totalCost": 119485485.36
       }
     },
     "ENTRESTO": {
@@ -69,9 +69,9 @@
       },
       "unpaid": {
         "n": 2152,
-        "avgCost": 43195.99,
+        "avgCost": 38556.83,
         "avgClaims": 38.7,
-        "totalCost": 92957777.6
+        "totalCost": 82974293.02
       }
     },
     "COSENTYX": {
@@ -105,16 +105,6 @@
   },
   "topHcp": {
     "ALL": [
-      {
-        "npi": "1003012931",
-        "name": "Niceto Lopez",
-        "city": "Walnut Creek",
-        "specialty": "Internal Medicine",
-        "rxCost": 9999999.0,
-        "rxClaims": 39.0,
-        "paymentAmount": 0.0,
-        "matched": false
-      },
       {
         "npi": "1396741351",
         "name": "Tien Nguyen",
@@ -354,19 +344,19 @@
         "rxClaims": 598.0,
         "paymentAmount": 434.46,
         "matched": true
+      },
+      {
+        "npi": "1356487656",
+        "name": "Shashi Sharma",
+        "city": "Visalia",
+        "specialty": "Cardiology",
+        "rxCost": 535529.63,
+        "rxClaims": 451.0,
+        "paymentAmount": 61.28,
+        "matched": true
       }
     ],
     "ENTRESTO": [
-      {
-        "npi": "1003012931",
-        "name": "Niceto Lopez",
-        "city": "Walnut Creek",
-        "specialty": "Internal Medicine",
-        "rxCost": 9999999.0,
-        "rxClaims": 39.0,
-        "paymentAmount": 0.0,
-        "matched": false
-      },
       {
         "npi": "1649230988",
         "name": "Mohamed Khan",
@@ -605,6 +595,16 @@
         "rxCost": 366312.47,
         "rxClaims": 349.0,
         "paymentAmount": 118.37,
+        "matched": true
+      },
+      {
+        "npi": "1609806041",
+        "name": "Siva Arunasalam",
+        "city": "Victorville",
+        "specialty": "Cardiology",
+        "rxCost": 362236.3,
+        "rxClaims": 421.0,
+        "paymentAmount": 196.87,
         "matched": true
       }
     ],
